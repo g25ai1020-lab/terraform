@@ -1,31 +1,42 @@
+############################################
+# Required Variables
+############################################
+
 variable "project_id" {
   description = "GCP Project ID"
+  type        = string
 }
 
 variable "region" {
-  default = "asia-south1"
+  description = "GCP Region"
+  type        = string
+  default     = "asia-south1"
 }
 
 variable "zone" {
-  default = "asia-south1-c"
+  description = "GCP Zone"
+  type        = string
+  default     = "asia-south1-c"
 }
 
+############################################
+# GKE / Networking Variables
+############################################
+
 variable "network_name" {
-  default = "banking-vpc"
+  description = "VPC Network Name"
+  type        = string
+  default     = "banking-vpc"
 }
 
 variable "subnet_name" {
-  default = "banking-subnet"
+  description = "Subnet Name"
+  type        = string
+  default     = "banking-subnet"
 }
 
-variable "gke_name" {
-  default = "banking-gke"
-}
-
-variable "node_count" {
-  default = 1
-}
-
-variable "machine_type" {
-  default = "e2-micro"
+variable "cluster_name" {
+  description = "GKE Cluster Name"
+  type        = string
+  default     = "banking-gke"
 }
